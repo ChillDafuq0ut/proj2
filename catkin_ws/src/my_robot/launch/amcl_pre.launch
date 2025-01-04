@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 <!-- TODO: Add nodes here -->
 	<!-- Map Server -->
@@ -14,9 +15,10 @@
 
 		<param name="initial_pose_x" value="0"/>
 		<param name="initial_pose_y" value="0"/>
+
   	</node>
 
-	<!-- Move Base -->
+	<!--  Move Base -->
 	 <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
 		<remap from="scan" to="my_robot/laser/scan"/>
 		<param name="base_global_planner" value="navfn/NavfnROS" />
@@ -26,10 +28,9 @@
   		<rosparam file="$(find my_robot)/config/local_costmap_params.yaml" command="load" />
   		<rosparam file="$(find my_robot)/config/global_costmap_params.yaml" command="load" />
   		<rosparam file="$(find my_robot)/config/base_local_planner_params.yaml" command="load" />
-  	</node>
-	 
+  	</node> 
+
 	
 
 
 </launch>
-
